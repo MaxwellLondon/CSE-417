@@ -1,0 +1,41 @@
+def wordSegmentation(Y):
+    N = length(Y)
+
+
+    #Table used for memoization, length of N
+    M = [0] + [-inf] * (N)
+
+    Q = matrix(N, N)
+
+    #Compute the quality of all possible substrings of Y
+    for i in range(1, N)
+        for j in range (i, N)
+            Q[i][j] = Quality(Y[i:j])
+
+
+    for i in range(1, N)
+        for j in range (i, N)
+            if Q[i][j] > 0
+
+                substringScore = Q[i][j] + M[J + 1]
+
+            if substringScore > M[i]:
+                M[i] = substringScore
+
+    
+    segmentation = []
+
+    i = 1
+
+    while i <= N
+        j = i
+        while j <= n and M[j] != M[J] + Q[i][j]:
+            j += 1
+
+        segmentation.add(Y[i:j])
+        i = j
+
+    return segmentation
+    
+
+
